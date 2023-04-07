@@ -47,11 +47,10 @@ alu: alu.o alu_tb.o
 	./zitoumeno4 
 	python3 $(SRC_DIR)/test_alu_results.py ./alu_tb_result.txt
 
-zer_alu: alu.o zer_alu_tb.o FORCE
+zer_alu: alu.o zer_alu_tb.o 
 	$(VCS) $(VCS_OPTS) zer_alu_tb -o zer_alu
 	./zer_alu 
 
-FORCE: ;
 
 clean:
 	rm -f -r zitoumeno*

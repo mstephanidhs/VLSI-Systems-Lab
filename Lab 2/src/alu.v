@@ -29,7 +29,6 @@ always @(A,B,opcode) begin
               {abs_overflow,Y} = -A;
               end
               else Y=A;
-        
       end
       5: Y = ~A; //not a
       6: Y = A & B; // A and B
@@ -49,9 +48,8 @@ always @(A,B,opcode) begin
 
   status[4] = ^Y; //parity
   status[3] = abs_overflow |(~Y[n-1]&A[n-1]&B[n-1]) | (Y[n-1]&(~A[n-1])&(~B[-1]));//overflow
-  status[2] =  A>B;//negative
+  status[2] = A>B;//negative
   status[1] = Y==0?1:0; //zero
-  status[0] = 0;
 end
 
 endmodule

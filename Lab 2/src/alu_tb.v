@@ -27,7 +27,7 @@ for (opcode=0;opcode<16;opcode=opcode+1)begin
     A=$random;
     B=$random;
     #5;
-    $fwrite(f,"%b %b %b %b \n", opcode, A, B, Y );
+    $fwrite(f,"%d %d %d %d \n", opcode, A, B, Y );
     #5;
     end
 end
