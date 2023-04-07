@@ -1,4 +1,4 @@
-module accumulator_tb();
+module zer_accumulator_tb();
   parameter m = 4;
   parameter n = 4;
   parameter k = 10;

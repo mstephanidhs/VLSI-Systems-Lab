@@ -19,7 +19,10 @@ assign so = lsb_out;
 always @(posedge clk, negedge rstn ) begin
     if (pl) data <= din;
     if (en) {data,lsb_out} <= {si,data};
-    if (!rstn) data <=0; 
+    if (!rstn) begin 
+        data <=0; 
+        lsb_out <= 0;
+    end
 end
 
     

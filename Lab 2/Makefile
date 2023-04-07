@@ -1,9 +1,9 @@
 SHELL = /bin/bash
-VCS = vcs -full64
+VCS = vcs -full64 
 VLOGAN = vlogan -full64
 
-VLOGAN_OPTS = -nc
-VCS_OPTS = -q -debug_access+all -timescale=10ns/1ns
+VLOGAN_OPTS = -nc -v2005
+VCS_OPTS = -q -debug_access+all -timescale=10ns/1ns -v2005
 GUI_OPTS = -gui=dve
 
 SRC_DIR = src
@@ -23,26 +23,35 @@ decoder: decoder.o decoder_tb.o
 	./zitoumeno1_3
 
 zer_decoder: decoder.o zer_decoder_tb.o
-	$(VCS) $(VCS_OPTS) zer_decoder_tb -o zer_dec
-	./zer_dec
-
+	$(VCS) $(VCS_OPTS) zer_decoder_tb -o zer_decoder
+	./zer_decoder
 
 shift_reg: shift_reg.o shift_reg_tb.o
 	$(VCS) $(VCS_OPTS) shift_reg_tb -o zitoumeno2
 	./zitoumeno2 
 
 zer_shift_reg: shift_reg.o zer_shift_reg_tb.o
-	$(VCS) $(VCS_OPTS) zer_shift_reg_tb -o zer_sr
-	./zer_sr
+	$(VCS) $(VCS_OPTS) zer_shift_reg_tb -o zer_shift_reg
+	./zer_shift_reg
 
-accumulator: shift_reg.o accumulator.o accumulator_tb.0
+accumulator: shift_reg.o accumulator.o accumulator_tb.o
 	$(VCS) $(VCS_OPTS) accumulator_tb -o zitoumeno3
-	./zitoumeno3
+	./zitoumeno3 
+
+zer_accumulator: shift_reg.o accumulator.o zer_accumulator_tb.o
+	$(VCS) $(VCS_OPTS) zer_accumulator_tb -o zer_accumulator
+	./zer_accumulator 
 
 alu: alu.o alu_tb.o
 	$(VCS) $(VCS_OPTS) alu_tb -o zitoumeno4
-	./zitoumeno4
+	./zitoumeno4 
+	python3 $(SRC_DIR)/test_alu_results.py ./alu_tb_result.txt
 
+zer_alu: alu.o zer_alu_tb.o FORCE
+	$(VCS) $(VCS_OPTS) zer_alu_tb -o zer_alu
+	./zer_alu 
+
+FORCE: ;
 
 clean:
 	rm -f -r zitoumeno*

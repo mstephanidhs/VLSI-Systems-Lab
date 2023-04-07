@@ -1,4 +1,4 @@
-module alu_tb();
+module zer_alu_tb();
   parameter n = 4;
   parameter delay = 1;
 
@@ -40,8 +40,8 @@ module alu_tb();
             4'd9: begin expected = A <<< B; V=A[n-1]^expected[n-1]; if (B>0) c=A[n-B]; Neg=expected[n-1]; end
             4'd10: begin expected= $signed(A) >>> B; c=A[B-1]; Neg=expected[n-1]; end
             4'd11: begin expected= A >> B;  if (B>0) c=A[B-1]; Neg=expected[n-1]; end
-            4'd12: begin if (B>0) begin expected = A << B | A >> (2**n-B);  c=A[n-1-B+1]; end  else expected = A; Neg=expected[n-1]; end 
-            4'd13: begin if (B>0) begin expected = A >> B | A << (2**n-B);  c=A[B-1]; end else expected = A; Neg=expected[n-1];end
+            4'd12: begin if (B>0) begin expected = A << B | A >> (n-B);  c=A[n-1-B+1]; end  else expected = A; Neg=expected[n-1]; end 
+            4'd13: begin if (B>0) begin expected = A >> B | A << (n-B);  c=A[B-1]; end else expected = A; Neg=expected[n-1];end
             4'd14: expected=0;
             4'd15: expected=1;
         endcase
@@ -53,7 +53,7 @@ module alu_tb();
             errors=errors+1;
         end
         if (expstat !== status) begin
-            $display("%0t, op=%0d A=%d B=%d | Expected: %5b got %5b", $time, opcode, $signed(A), $signed(B), expstat, status);
+           // $display("%0t, op=%0d A=%d B=%d | Expected: %5b got %5b", $time, opcode, $signed(A), $signed(B), expstat, status);
             errorstat=errorstat+1;
         end
     end

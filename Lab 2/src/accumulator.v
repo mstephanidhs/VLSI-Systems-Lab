@@ -5,53 +5,57 @@ module accumulator #(
 ) (
     input [(m+n)*k-1:0] din,
     input pl, clk, rstn,
-    output ready,
+    output reg ready,
     output reg [m+n+(k-1)-1:0] sum
 );
 
-reg shift_enable;
-reg load_enable;
-reg counter;
+wire shift_enable;
+wire load_enable;
+reg [$clog2(k):0] counter;
 wire [m+n-1:0] sreg_sum_connect;
 wire [k-1:0] sreg_din_bus[m+n-1:0];
 
 assign load_enable = pl & ready;
 assign shift_enable = ~ready;
 
-integer p,q;
-
-for(p=0; p<m+n ; p = p+1 ) begin
-    for (q=0; q<k-1 ; q=q+1) begin
-
-        assign sreg_din_bus[p][q] = din[q*(m+n)+p]
-    end
-end
+integer j;
 
 
-genvar i,j;
+
+
+
+genvar i,p,q;
 
 generate
-    for (i=0; i<m+n-1; i=i+1) begin : reg_file
+    for(p=0; p<m+n ; p = p+1 ) begin : bus_creation_bit_selection
+    for (q=0; q<k-1 ; q=q+1) begin : bus_creation_operant_selection
+
+        assign sreg_din_bus[p][q] = din[q*(m+n)+p];
+    end
+end
+endgenerate
+
+generate
+    for (i=0; i<m+n; i=i+1) begin : reg_file
         shift_reg #(.size(k-1)) sr(
             .clk(clk),
             .rstn(rstn), 
             .din(sreg_din_bus[i]),
             .pl(load_enable), 
             .en(shift_enable), 
-            .si(din[i]), 
-            .so(sreg_sum_connect[i]))  
+            .si(1'b0), 
+            .so(sreg_sum_connect[i]));  
     end 
 endgenerate
 
 
 always @(posedge clk, negedge rstn) begin
 
-    if (!rstn){
-        for (i=0; i<m+n-1; i=i+1) reg_file[i].shift_reg = 0;
+    if (!rstn) begin
         ready <= 1;
         counter <= 0;
-        shift_enable <= 0;
-    }
+        sum <= 0 ;
+    end
 end
 
 always @(posedge clk) begin
@@ -59,13 +63,13 @@ if (ready) begin
     counter <= 0;
     if(pl) begin
         ready <= 0;
-        sum <= din[(m+n)*k-1:(m+n)*(k-1)-2];
+        sum <= din[(m+n)*k-1:(m+n)*(k-1)];
     end 
 end
 else begin
     counter <= counter+1;
     sum <= sum + sreg_sum_connect;
-    if (counter == k) ready <=1;
+    if (counter == k-1) ready <=1;
 end
 end
 
