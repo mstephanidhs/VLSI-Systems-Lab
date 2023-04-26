@@ -1,0 +1,90 @@
+$date
+	Wed Apr 26 19:47:17 2023
+$end
+
+$version
+	Synopsys VCS version T-2022.06-SP1-1_Full64
+$end
+
+$timescale
+	1ns
+$end
+
+$comment Csum: 1 bc31694948fd2e63 $end
+
+
+$scope module lockcomp_tb $end
+$var reg 1 ! reset $end
+$var reg 1 " preset $end
+$var reg 16 # input_number [15:0] $end
+$var wire 1 $ equal $end
+$var reg 16 % temp [15:0] $end
+
+$scope module dut $end
+$var reg 16 & stored_number [15:0] $end
+$var wire 1 ' reset $end
+$var wire 1 ( preset $end
+$var wire 16 ) in [15:0] $end
+$var reg 1 * equal $end
+$upscope $end
+
+$upscope $end
+
+$enddefinitions $end
+
+#0
+$dumpvars
+1*
+0(
+0'
+1$
+0"
+0!
+b0000000000000000 )
+b0000000000000000 #
+b0000000000000000 &
+bxxxxxxxxxxxxxxxx %
+$end
+#60
+b0011010100100100 %
+b0011010100100100 #
+b0011010100100100 )
+1"
+1(
+0*
+0$
+b0011010100100100 &
+1*
+1$
+#70
+0"
+0(
+#120
+b0101111010000001 #
+b0101111010000001 )
+0*
+0$
+#180
+b0011010100100100 #
+b0011010100100100 )
+1*
+1$
+#190
+1!
+1'
+b0000000000000000 &
+0*
+0$
+#200
+0!
+0'
+#210
+b0000000000000000 #
+b0000000000000000 )
+1*
+1$
+#270
+b1101011000001001 #
+b1101011000001001 )
+0*
+0$
