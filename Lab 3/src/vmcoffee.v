@@ -38,11 +38,7 @@ always @(state or C5 or C10 or NFC or BEANS or WATER) begin
             if (WATER>1 && BEANS) next=IDLE;
             ERROR = 0;
         end
-    endcase
-    
+    endcase  
 end
 
-
-
-    
 endmodule

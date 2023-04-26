@@ -20,13 +20,21 @@ vmcoffee: vmcoffee.o vmcoffee_tb.o
 	./zitoumeno1_2
 	@echo "❗️Open vmcoffee.vcd for the waveforms."
 
+
 lockcomp: lockcomp.o lockcomp_tb.o
+	$(VCS) $(VCS_OPTS) lockcomp_tb -o zitoumeno2_1
+	./zitoumeno2_1	
+	@echo "❗️Open lockcomp.vcd for the waveforms."
 
 
 dlock: lockcomp.o dlock.o dlock_tb.o
+	$(VCS) $(VCS_OPTS) dlock_tb -o zitoumeno2_3
+	./zitoumeno2_3	
+	@echo "❗️Open dlock_tb.vcd for the waveforms."
 
 
 clean:
 	rm -f -r zitoumeno*
 	rm -f -r ex*
 	rm -f *.o
+	rm -f *.vcd
