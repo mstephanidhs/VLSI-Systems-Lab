@@ -70,6 +70,7 @@ always @(state, SW16, posedge SW1, posedge SW2, posedge SW3) begin
     end
 
     CHECK_PASSWORD:begin
+        counter = 0;
         if (equal == 1) next = LOCK_UNLOCK;
         else next = WRONG_CODE;
     end
@@ -81,26 +82,28 @@ always @(state, SW16, posedge SW1, posedge SW2, posedge SW3) begin
         lock = 1;
         log = 16'bx;
         locked = ~locked;
-        if(!SW3 && !locked) next = DOOR_CLOSED;
-        else if (locked) next = DOOR_OPEN;
+        if(!SW3 && locked) next = DOOR_CLOSED;
+        else if (!locked) next = DOOR_OPEN;
     end
 
 
+
     DOOR_OPEN: begin
-        if(SW1 && !SW3) next = LOCK_UNLOCK;
-
-        if(SW16 != 4'bz) begin
-            log[counter*4 +:4] = SW16;
-            counter = counter + 1;
-        end
-
-        if(log == 16'bxxxx111100011111) begin
-            if(SW2) begin
+        if (SW1 && !SW3) next = LOCK_UNLOCK;
+        
+        if (SW2) begin
+            if(log[0 +: 12] == 12'b111100011111) begin
             counter = 0;
             next = CHANGE_CODE;
             end
         end
+
+        if(!SW2 && (SW16 !== 4'bz))begin
+         log[counter*4 +:4] = SW16;
+         counter = counter + 1;
+        end
     end
+
 
 
     CHANGE_CODE: begin
@@ -120,31 +123,31 @@ always @(state, SW16, posedge SW1, posedge SW2, posedge SW3) begin
                 end
 
                 else begin 
-                    log[counter*4 +:4] = SW16;
-                    counter = counter + 1;
-
-                    if (counter == 4) begin
-                        comp_preset = 1;
-                        next = DOOR_OPEN;
+                    if(SW16 !== 4'bz) begin
+                        log[counter*4 +:4] = SW16;
+                        counter = counter + 1;
                     end
                 end
         end  
+
+        if (counter == 4) begin
+                        comp_preset = 1;
+                        next = DOOR_OPEN;
+                    end
     end
 
 
 
     WRONG_CODE: begin
         Error = 1;
-        if(SW16 != 4'bz) begin
+        if(SW16 !== 4'bz) begin
             log[counter*4 +:4] = SW16;
             counter = counter + 1;
         end
 
-        if(log == 16'b0010011001100101) begin
-            if(SW2) begin
+        if(log == 16'b0101011001100010) begin  
             counter = 0;
-            next = SW3?CHANGE_CODE:DOOR_CLOSED;
-            end
+            next = locked?DOOR_CLOSED:CHANGE_CODE;
         end
     end
     endcase
