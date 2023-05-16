@@ -1,6 +1,6 @@
 set DESIGN_NAME rca
 
-analyze -format verilog {./src/rca.v ./src/fulladder.v}
+analyze -format verilog {./src/given/rca.v ./src/given/fulladder.v}
 elaborate $DESIGN_NAME
 
 link
