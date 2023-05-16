@@ -1,0 +1,50 @@
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : rca
+Version: T-2022.03-SP5
+Date   : Tue May 16 16:06:15 2023
+****************************************
+
+Operating Conditions: PVT_0P7V_25C   Library: asap7
+Wire Load Model Mode: top
+
+  Startpoint: b_i[0] (input port)
+  Endpoint: sum_o[4] (output port)
+  Path Group: default
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  input external delay                     0.00       0.00 f
+  b_i[0] (in)                              0.00       0.00 f
+  fas[0].fa/b (fulladder_0)                0.00       0.00 f
+  fas[0].fa/U1/Y (AO22x1_ASAP7_75t_R)     29.37      29.37 f
+  fas[0].fa/cout (fulladder_0)             0.00      29.37 f
+  fas[1].fa/cin (fulladder_3)              0.00      29.37 f
+  fas[1].fa/U2/Y (AO22x1_ASAP7_75t_R)     29.60      58.98 f
+  fas[1].fa/cout (fulladder_3)             0.00      58.98 f
+  fas[2].fa/cin (fulladder_2)              0.00      58.98 f
+  fas[2].fa/U2/Y (AO22x1_ASAP7_75t_R)     29.60      88.58 f
+  fas[2].fa/cout (fulladder_2)             0.00      88.58 f
+  fas[3].fa/cin (fulladder_1)              0.00      88.58 f
+  fas[3].fa/U2/Y (AO22x1_ASAP7_75t_R)     22.98     111.56 f
+  fas[3].fa/cout (fulladder_1)             0.00     111.56 f
+  sum_o[4] (out)                           0.00     111.56 f
+  data arrival time                                 111.56
+
+  max_delay                              200.00     200.00
+  output external delay                    0.00     200.00
+  data required time                                200.00
+  -----------------------------------------------------------
+  data required time                                200.00
+  data arrival time                                -111.56
+  -----------------------------------------------------------
+  slack (MET)                                        88.44
+
+
+1

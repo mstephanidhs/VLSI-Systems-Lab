@@ -1,0 +1,83 @@
+ 
+****************************************
+Report : qor
+Design : rca
+Version: T-2022.03-SP5
+Date   : Tue May 16 16:02:59 2023
+****************************************
+
+
+  Timing Path Group 'default'
+  -----------------------------------
+  Levels of Logic:               5.00
+  Critical Path Length:         58.03
+  Critical Path Slack:          -8.03
+  Critical Path Clk Period:       n/a
+  Total Negative Slack:        -13.71
+  No. of Violating Paths:        2.00
+  Worst Hold Violation:          0.00
+  Total Hold Violation:          0.00
+  No. of Hold Violations:        0.00
+  -----------------------------------
+
+
+  Cell Count
+  -----------------------------------
+  Hierarchical Cell Count:          0
+  Hierarchical Port Count:          0
+  Leaf Cell Count:                 24
+  Buf/Inv Cell Count:               5
+  Buf Cell Count:                   0
+  Inv Cell Count:                   5
+  CT Buf/Inv Cell Count:            0
+  Combinational Cell Count:        24
+  Sequential Cell Count:            0
+  Macro Count:                      0
+  -----------------------------------
+
+
+  Area
+  -----------------------------------
+  Combinational Area:       38.024640
+  Noncombinational Area:     0.000000
+  Buf/Inv Area:              3.965760
+  Total Buffer Area:             0.00
+  Total Inverter Area:           3.97
+  Macro/Black Box Area:      0.000000
+  Net Area:                  0.000000
+  -----------------------------------
+  Cell Area:                38.024640
+  Design Area:              38.024640
+
+
+  Design Rules
+  -----------------------------------
+  Total Number of Nets:            32
+  Nets With Violations:             0
+  Max Trans Violations:             0
+  Max Cap Violations:               0
+  -----------------------------------
+
+
+  Hostname: dagobah.ceid.upatras.gr
+
+  Compile CPU Statistics
+  -----------------------------------------
+  Resource Sharing:                    0.00
+  Logic Optimization:                  0.26
+  Mapping Optimization:                2.04
+  -----------------------------------------
+  Overall Compile Time:                8.53
+  Overall Compile Wall Clock Time:     8.84
+
+  --------------------------------------------------------------------
+
+  Design  WNS: 8.03  TNS: 13.71  Number of Violating Paths: 2
+
+
+  Design (Hold)  WNS: 0.00  TNS: 0.00  Number of Violating Paths: 0
+
+  --------------------------------------------------------------------
+
+
+1

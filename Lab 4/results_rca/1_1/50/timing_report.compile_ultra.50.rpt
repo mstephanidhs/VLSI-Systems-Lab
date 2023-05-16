@@ -1,0 +1,43 @@
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : rca
+Version: T-2022.03-SP5
+Date   : Tue May 16 16:02:59 2023
+****************************************
+
+Operating Conditions: PVT_0P7V_25C   Library: asap7
+Wire Load Model Mode: top
+
+  Startpoint: a_i[1] (input port)
+  Endpoint: sum_o[3] (output port)
+  Path Group: default
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  input external delay                     0.00       0.00 f
+  a_i[1] (in)                              0.00       0.00 f
+  U37/Y (NAND2x1p5_ASAP7_75t_R)            7.90       7.90 r
+  U30/Y (OAI21x1_ASAP7_75t_R)             12.26      20.17 f
+  U27/Y (NOR2x1p5_ASAP7_75t_R)            11.66      31.82 r
+  U25/Y (NOR2x1_ASAP7_75t_R)              10.15      41.98 f
+  U29/Y (XOR2xp5_ASAP7_75t_R)             16.05      58.03 f
+  sum_o[3] (out)                           0.00      58.03 f
+  data arrival time                                  58.03
+
+  max_delay                               50.00      50.00
+  output external delay                    0.00      50.00
+  data required time                                 50.00
+  -----------------------------------------------------------
+  data required time                                 50.00
+  data arrival time                                 -58.03
+  -----------------------------------------------------------
+  slack (VIOLATED)                                   -8.03
+
+
+1

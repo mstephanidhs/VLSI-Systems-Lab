@@ -1,0 +1,47 @@
+ 
+****************************************
+Report : area
+Design : rca
+Version: T-2022.03-SP5
+Date   : Tue May 16 16:06:15 2023
+****************************************
+
+Library(s) Used:
+
+    asap7 (File: /usr/local/eda/synLibs/asap7/7nm/db/asap7.db)
+
+Number of ports:                           33
+Number of nets:                            41
+Number of cells:                           17
+Number of combinational cells:             13
+Number of sequential cells:                 0
+Number of macros/black boxes:               0
+Number of buf/inv:                          0
+Number of references:                       5
+
+Combinational area:                 25.894080
+Buf/Inv area:                        0.000000
+Noncombinational area:               0.000000
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (No wire load specified)
+
+Total cell area:                    25.894080
+Total area:                 undefined
+
+Hierarchical area distribution
+------------------------------
+
+                                  Global cell area          Local cell area
+                                  ------------------  --------------------------- 
+Hierarchical cell                 Absolute   Percent  Combi-    Noncombi-  Black-
+                                  Total      Total    national  national   boxes   Design
+--------------------------------  ---------  -------  --------  ---------  ------  -----------
+rca                                 25.8941    100.0    0.6998     0.0000  0.0000  rca
+fas[0].fa                            6.2986     24.3    6.2986     0.0000  0.0000  fulladder_0
+fas[1].fa                            6.2986     24.3    6.2986     0.0000  0.0000  fulladder_3
+fas[2].fa                            6.2986     24.3    6.2986     0.0000  0.0000  fulladder_2
+fas[3].fa                            6.2986     24.3    6.2986     0.0000  0.0000  fulladder_1
+--------------------------------  ---------  -------  --------  ---------  ------  -----------
+Total                                                  25.8941     0.0000  0.0000
+
+1
