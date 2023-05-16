@@ -27,6 +27,10 @@ ex1_2:
 	dc_shell -f scripts/my_scripts/ex_1_2_200_ultra.tcl
 
 
+ex2_1:
+	dc_shell -f scripts/my_scripts/ex_2_1.tcl
+
+
 clean:
 	rm -f -r zitoumeno*
 	rm -f -r ex*

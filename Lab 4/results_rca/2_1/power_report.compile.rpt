@@ -1,0 +1,44 @@
+Loading db file '/usr/local/eda/synLibs/asap7/7nm/db/asap7.db'
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+Warning: Design has unannotated primary inputs. (PWR-414)
+Warning: Design has unannotated sequential cell outputs. (PWR-415)
+ 
+****************************************
+Report : power
+        -hier
+        -analysis_effort low
+Design : rca_w_regs
+Version: T-2022.03-SP5
+Date   : Tue May 16 19:10:02 2023
+****************************************
+
+
+Library(s) Used:
+
+    asap7 (File: /usr/local/eda/synLibs/asap7/7nm/db/asap7.db)
+
+
+Operating Conditions: PVT_0P7V_25C   Library: asap7
+Wire Load Model Mode: top
+
+
+Global Operating Voltage = 0.7  
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000ff
+    Time Units = 1ps
+    Dynamic Power Units = 1mW    (derived from V,C,T units)
+    Leakage Power Units = 1pW
+
+
+--------------------------------------------------------------------------------
+                                       Switch   Int      Leak     Total
+Hierarchy                              Power    Power    Power    Power    %
+--------------------------------------------------------------------------------
+rca_w_regs                             4.82e-03 1.49e-02 5.80e+03 1.97e-02 100.0
+  adder (rca_width4)                   6.25e-04 9.00e-04 1.38e+03 1.53e-03   7.7
+    fas[3].fa (fulladder_1)            1.34e-04 2.28e-04  344.724 3.63e-04   1.8
+    fas[2].fa (fulladder_2)            1.72e-04 2.29e-04  344.662 4.01e-04   2.0
+    fas[1].fa (fulladder_3)            1.71e-04 2.33e-04  343.838 4.04e-04   2.0
+    fas[0].fa (fulladder_0)            1.49e-04 2.11e-04  341.607 3.60e-04   1.8
+1
