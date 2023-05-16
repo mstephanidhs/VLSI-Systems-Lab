@@ -7,7 +7,7 @@ Report : timing
         -max_paths 1
 Design : rca_w_regs
 Version: T-2022.03-SP5
-Date   : Tue May 16 19:46:39 2023
+Date   : Tue May 16 19:46:51 2023
 ****************************************
 
 Operating Conditions: PVT_0P7V_25C   Library: asap7
@@ -23,9 +23,10 @@ Wire Load Model Mode: top
   Point                                                   Incr       Path
   --------------------------------------------------------------------------
   data_out_reg[4]/CLK (ASYNC_DFFHx1_ASAP7_75t_R)          0.00       0.00 r
-  data_out_reg[4]/QN (ASYNC_DFFHx1_ASAP7_75t_R)          43.73      43.73 r
-  data_out[4] (out)                                       0.00      43.73 r
-  data arrival time                                                 43.73
+  data_out_reg[4]/QN (ASYNC_DFFHx1_ASAP7_75t_R)          45.82      45.82 r
+  U25/Y (INVxp33_ASAP7_75t_R)                             5.97      51.79 f
+  data_out[4] (out)                                       0.00      51.79 f
+  data arrival time                                                 51.79
   --------------------------------------------------------------------------
   (Path is unconstrained)
 
