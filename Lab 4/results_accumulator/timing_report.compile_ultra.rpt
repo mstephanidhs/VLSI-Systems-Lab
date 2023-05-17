@@ -12,7 +12,7 @@ Report : timing
         -max_paths 1
 Design : accumulator
 Version: T-2022.03-SP5
-Date   : Wed May 17 14:35:13 2023
+Date   : Wed May 17 14:45:16 2023
 ****************************************
 
 Operating Conditions: PVT_0P7V_25C   Library: asap7

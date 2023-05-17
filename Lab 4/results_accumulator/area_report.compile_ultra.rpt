@@ -1,32 +1,35 @@
+Warning: Design 'accumulator' has '1' unresolved references. For more detailed information, use the "link" command. (UID-341)
  
 ****************************************
 Report : area
-Design : vmcoffee
+Design : accumulator
 Version: T-2022.03-SP5
-Date   : Wed May 17 14:35:26 2023
+Date   : Wed May 17 14:45:16 2023
 ****************************************
 
 Library(s) Used:
 
     asap7 (File: /usr/local/eda/synLibs/asap7/7nm/db/asap7.db)
 
-Number of ports:                           13
-Number of nets:                            39
-Number of cells:                           29
-Number of combinational cells:             27
-Number of sequential cells:                 2
+Number of ports:                           46
+Number of nets:                           185
+Number of cells:                          143
+Number of combinational cells:            129
+Number of sequential cells:                12
 Number of macros/black boxes:               0
-Number of buf/inv:                          7
-Number of references:                      12
+Number of buf/inv:                         46
+Number of references:                      40
 
-Combinational area:                 25.194240
-Buf/Inv area:                        4.898880
-Noncombinational area:              12.130560
+Combinational area:                148.132801
+Buf/Inv area:                       34.758720
+Noncombinational area:              66.718080
 Macro/Black Box area:                0.000000
 Net Interconnect area:      undefined  (No wire load specified)
 
-Total cell area:                    37.324800
+Total cell area:                   214.850880
 Total area:                 undefined
+
+Information: This design contains black box (unknown) components. (RPT-8)
 
 Hierarchical area distribution
 ------------------------------
@@ -36,8 +39,8 @@ Hierarchical area distribution
 Hierarchical cell                 Absolute   Percent  Combi-    Noncombi-  Black-
                                   Total      Total    national  national   boxes   Design
 --------------------------------  ---------  -------  --------  ---------  ------  ---------
-vmcoffee                            37.3248    100.0   25.1942    12.1306  0.0000  vmcoffee
+accumulator                        214.8509    100.0  148.1328    66.7181  0.0000  accumulator
 --------------------------------  ---------  -------  --------  ---------  ------  ---------
-Total                                                  25.1942    12.1306  0.0000
+Total                                                 148.1328    66.7181  0.0000
 
 1
