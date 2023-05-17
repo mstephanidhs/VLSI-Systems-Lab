@@ -29,6 +29,19 @@ ex1_2:
 
 ex2_1:
 	dc_shell -f scripts/my_scripts/ex_2_1.tcl
+	dc_shell -f scripts/my_scripts/ex_2_1_ultra.tcl
+
+ex2_2:
+	dc_shell -f scripts/my_scripts/ex_2_2.tcl
+
+ex3_1:
+
+ex3_2:
+
+ex4:
+
+
+
 
 
 clean:

@@ -10,10 +10,10 @@ read_sdc scripts/my_scripts/rca_clock.sdc
 
 set_max_area 0
 
-compile
+compile_ultra
 
 set resultdir "./results_rca/2_1"
-set postfix "compile"
+set postfix "compile_ultra"
 exec mkdir -p -- $resultdir
 report_timing > $resultdir/timing_report.${postfix}.rpt
 report_qor > $resultdir/qor_report.${postfix}.rpt

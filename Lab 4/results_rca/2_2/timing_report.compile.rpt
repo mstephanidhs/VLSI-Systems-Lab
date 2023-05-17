@@ -5,9 +5,9 @@ Report : timing
         -path full
         -delay max
         -max_paths 1
-Design : rca_w_regs
+Design : rca_pipelined
 Version: T-2022.03-SP5
-Date   : Tue May 16 19:54:09 2023
+Date   : Wed May 17 11:24:09 2023
 ****************************************
 
 Operating Conditions: PVT_0P7V_25C   Library: asap7

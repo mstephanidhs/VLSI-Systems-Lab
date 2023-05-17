@@ -7,9 +7,9 @@ Warning: Design has unannotated sequential cell outputs. (PWR-415)
 Report : power
         -hier
         -analysis_effort low
-Design : rca_w_regs
+Design : rca_pipelined
 Version: T-2022.03-SP5
-Date   : Tue May 16 19:54:11 2023
+Date   : Wed May 17 11:24:10 2023
 ****************************************
 
 
@@ -35,10 +35,11 @@ Power-specific unit information :
                                        Switch   Int      Leak     Total
 Hierarchy                              Power    Power    Power    Power    %
 --------------------------------------------------------------------------------
-rca_w_regs                             9.63e-03 2.98e-02 5.80e+03 3.95e-02 100.0
-  adder (rca_width4)                   1.25e-03 1.80e-03 1.38e+03 3.05e-03   7.7
-    fas[3].fa (fulladder_1)            2.69e-04 4.56e-04  344.724 7.25e-04   1.8
-    fas[2].fa (fulladder_2)            3.43e-04 4.58e-04  344.662 8.01e-04   2.0
-    fas[1].fa (fulladder_3)            3.41e-04 4.65e-04  343.838 8.07e-04   2.0
-    fas[0].fa (fulladder_0)            2.97e-04 4.21e-04  341.607 7.19e-04   1.8
+rca_pipelined                          1.17e-02 3.88e-02 8.07e+03 5.06e-02 100.0
+  second_stage (irca_width2_1)         1.61e-04 2.46e-04  664.423 4.08e-04   0.8
+    fas[1].fa (fulladder_1)            6.97e-05 1.21e-04  332.149 1.91e-04   0.4
+    fas[0].fa (fulladder_2)            9.14e-05 1.25e-04  332.274 2.17e-04   0.4
+  first_stage (irca_width2_0)          5.77e-04 8.85e-04  685.445 1.46e-03   2.9
+    fas[1].fa (fulladder_3)            2.79e-04 4.63e-04  343.838 7.43e-04   1.5
+    fas[0].fa (fulladder_0)            2.97e-04 4.21e-04  341.607 7.19e-04   1.4
 1

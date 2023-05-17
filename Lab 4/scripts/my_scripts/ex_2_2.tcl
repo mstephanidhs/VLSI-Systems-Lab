@@ -1,6 +1,6 @@
-set DESIGN_NAME rca_w_regs
+set DESIGN_NAME rca_pipelined
 
-analyze -format verilog {./src/2_1/rca_w_regs.v ./src/given/rca.v ./src/given/fulladder.v}
+analyze -format verilog {./src/2_2/rca_pipelined.v ./src/2_2/irca.v ./src/given/fulladder.v}
 elaborate $DESIGN_NAME
 
 link
@@ -12,7 +12,7 @@ set_max_area 0
 
 compile
 
-set resultdir "./results_rca/2_1"
+set resultdir "./results_rca/2_2"
 set postfix "compile"
 exec mkdir -p -- $resultdir
 report_timing > $resultdir/timing_report.${postfix}.rpt
