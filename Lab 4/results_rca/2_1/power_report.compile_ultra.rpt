@@ -5,7 +5,7 @@ Report : power
         -analysis_effort low
 Design : rca_w_regs
 Version: T-2022.03-SP5
-Date   : Tue May 16 19:54:22 2023
+Date   : Wed May 17 14:04:50 2023
 ****************************************
 
 
@@ -31,5 +31,5 @@ Power-specific unit information :
                                        Switch   Int      Leak     Total
 Hierarchy                              Power    Power    Power    Power    %
 --------------------------------------------------------------------------------
-rca_w_regs                             9.74e-03 2.56e-02 4.77e+03 3.53e-02 100.0
+rca_w_regs                             2.32e-02    0.339 6.11e+03    0.362 100.0
 1

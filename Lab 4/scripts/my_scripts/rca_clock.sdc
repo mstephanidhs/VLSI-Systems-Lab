@@ -4,7 +4,7 @@ set clk_port clk
 set reset_port rstn
 set clk_period 50
 
-create_clock -name clk -period $clk_period
+create_clock $clk_port -name clk -period $clk_period
 set_false_path -from $reset_port
 
 set_input_delay 0.00 -clock  clk [all_inputs]

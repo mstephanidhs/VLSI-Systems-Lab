@@ -3,7 +3,7 @@
 Report : area
 Design : rca_w_regs
 Version: T-2022.03-SP5
-Date   : Tue May 16 19:54:09 2023
+Date   : Wed May 17 14:04:36 2023
 ****************************************
 
 Library(s) Used:
@@ -11,21 +11,21 @@ Library(s) Used:
     asap7 (File: /usr/local/eda/synLibs/asap7/7nm/db/asap7.db)
 
 Number of ports:                           48
-Number of nets:                            84
-Number of cells:                           46
-Number of combinational cells:             28
+Number of nets:                            97
+Number of cells:                           59
+Number of combinational cells:             41
 Number of sequential cells:                13
 Number of macros/black boxes:               0
-Number of buf/inv:                         14
+Number of buf/inv:                         22
 Number of references:                       4
 
-Combinational area:                 36.391680
-Buf/Inv area:                        9.797760
+Combinational area:                 47.355840
+Buf/Inv area:                       16.329600
 Noncombinational area:              78.848639
 Macro/Black Box area:                0.000000
 Net Interconnect area:      undefined  (No wire load specified)
 
-Total cell area:                   115.240319
+Total cell area:                   126.204479
 Total area:                 undefined
 
 Hierarchical area distribution
@@ -36,13 +36,13 @@ Hierarchical area distribution
 Hierarchical cell                 Absolute   Percent  Combi-    Noncombi-  Black-
                                   Total      Total    national  national   boxes   Design
 --------------------------------  ---------  -------  --------  ---------  ------  -----------
-rca_w_regs                         115.2403    100.0   10.4976    78.8486  0.0000  rca_w_regs
-adder                               25.8941     22.5    0.6998     0.0000  0.0000  rca_width4
-adder/fas[0].fa                      6.2986      5.5    6.2986     0.0000  0.0000  fulladder_0
-adder/fas[1].fa                      6.2986      5.5    6.2986     0.0000  0.0000  fulladder_3
-adder/fas[2].fa                      6.2986      5.5    6.2986     0.0000  0.0000  fulladder_2
-adder/fas[3].fa                      6.2986      5.5    6.2986     0.0000  0.0000  fulladder_1
+rca_w_regs                         126.2045    100.0   10.4976    78.8486  0.0000  rca_w_regs
+adder                               36.8582     29.2    0.6998     0.0000  0.0000  rca_width4
+adder/fas[0].fa                      7.6982      6.1    7.6982     0.0000  0.0000  fulladder_0
+adder/fas[1].fa                     10.2643      8.1   10.2643     0.0000  0.0000  fulladder_3
+adder/fas[2].fa                     10.4976      8.3   10.4976     0.0000  0.0000  fulladder_2
+adder/fas[3].fa                      7.6982      6.1    7.6982     0.0000  0.0000  fulladder_1
 --------------------------------  ---------  -------  --------  ---------  ------  -----------
-Total                                                  36.3917    78.8486  0.0000
+Total                                                  47.3558    78.8486  0.0000
 
 1

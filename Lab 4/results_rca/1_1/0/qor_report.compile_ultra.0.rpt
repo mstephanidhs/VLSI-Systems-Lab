@@ -3,7 +3,7 @@
 Report : qor
 Design : rca
 Version: T-2022.03-SP5
-Date   : Tue May 16 16:02:47 2023
+Date   : Wed May 17 14:03:35 2023
 ****************************************
 
 
@@ -65,10 +65,10 @@ Date   : Tue May 16 16:02:47 2023
   -----------------------------------------
   Resource Sharing:                    0.00
   Logic Optimization:                  0.23
-  Mapping Optimization:                2.56
+  Mapping Optimization:                2.58
   -----------------------------------------
-  Overall Compile Time:                9.20
-  Overall Compile Wall Clock Time:     9.54
+  Overall Compile Time:                9.09
+  Overall Compile Wall Clock Time:     9.45
 
   --------------------------------------------------------------------
 

@@ -9,11 +9,16 @@ GUI_OPTS = -gui=dve
 SRC_DIR = src
 VPATH=$(SRC_DIR)
 
+all: ex1 ex2 ex3 ex4
+
+
 %.o: %.v
 	@echo "Compile $<"
 	$(VLOGAN) $(VLOGAN_OPTS) $<
 	touch $@
 
+
+ex1: ex1_1 ex1_2
 
 ex1_1:
 	dc_shell -f scripts/my_scripts/ex_1_1_0.tcl
@@ -27,20 +32,30 @@ ex1_2:
 	dc_shell -f scripts/my_scripts/ex_1_2_200_ultra.tcl
 
 
+
+ex2: ex2_1 ex2_2
+
+
 ex2_1:
 	dc_shell -f scripts/my_scripts/ex_2_1.tcl
 	dc_shell -f scripts/my_scripts/ex_2_1_ultra.tcl
 
 ex2_2:
 	dc_shell -f scripts/my_scripts/ex_2_2.tcl
+	dc_shell -f scripts/my_scripts/ex_2_2_retime.tcl
+
+
+ex3: ex3_1 ex3_2
+
 
 ex3_1:
+	dc_shell -f scripts/my_scripts/ex_3_1.tcl
 
 ex3_2:
+	dc_shell -f scripts/my_scripts/ex_3_2.tcl
+
 
 ex4:
-
-
 
 
 

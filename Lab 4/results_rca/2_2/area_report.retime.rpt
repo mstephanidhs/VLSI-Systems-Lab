@@ -1,0 +1,43 @@
+ 
+****************************************
+Report : area
+Design : rca_pipelined
+Version: T-2022.03-SP5
+Date   : Wed May 17 13:13:29 2023
+****************************************
+
+Library(s) Used:
+
+    asap7 (File: /usr/local/eda/synLibs/asap7/7nm/db/asap7.db)
+
+Number of ports:                           15
+Number of nets:                            65
+Number of cells:                           55
+Number of combinational cells:             34
+Number of sequential cells:                21
+Number of macros/black boxes:               0
+Number of buf/inv:                         22
+Number of references:                      16
+
+Combinational area:                 38.724480
+Buf/Inv area:                       17.029440
+Noncombinational area:             127.370879
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (No wire load specified)
+
+Total cell area:                   166.095359
+Total area:                 undefined
+
+Hierarchical area distribution
+------------------------------
+
+                                  Global cell area          Local cell area
+                                  ------------------  --------------------------- 
+Hierarchical cell                 Absolute   Percent  Combi-    Noncombi-  Black-
+                                  Total      Total    national  national   boxes   Design
+--------------------------------  ---------  -------  --------  ---------  ------  ---------
+rca_pipelined                      166.0954    100.0   38.7245   127.3709  0.0000  rca_pipelined
+--------------------------------  ---------  -------  --------  ---------  ------  ---------
+Total                                                  38.7245   127.3709  0.0000
+
+1
