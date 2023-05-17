@@ -1,76 +1,72 @@
 module accumulator #(
-    parameter m=4,
-    parameter n=2,
-    parameter k=4
-) (
-    input [(m+n)*k-1:0] din,
-    input pl, clk, rstn,
-    output reg ready,
-    output reg [m+n+(k-1)-1:0] sum
+  parameter m = 4,
+  parameter n = 4,
+  parameter k = 4,
+  parameter width = m+n,
+  parameter swidth = $clog2(k*(2**(m+n)-1)),
+  parameter cwidth = $clog2(k)
+)(
+  input clk, rstn,
+  input pl,
+  input [k*width-1:0] din,
+  output [swidth-1:0] sum,
+  output ready
 );
+  reg ready_reg;
+  reg [swidth-1:0] sum_reg;
+  reg [cwidth-1:0] counter_reg;
+  wire [swidth-1:0] newsum;
+  wire [width-1:0] addend;
+  wire mypl;
 
-wire shift_enable;
-wire load_enable;
-reg [$clog2(k):0] counter;
-wire [m+n-1:0] sreg_sum_connect;
-wire [k-1:0] sreg_din_bus[m+n-1:0];
-
-assign load_enable = pl & ready;
-assign shift_enable = ~ready;
-
-integer j;
+  sreg #(k-1, width) summands (.clk(clk), .rstn(rstn), .pl(mypl), .en(1'b1), .si({width{1'b0}}), .din(din[k*width-1:width]), .so(addend));
 
 
-
-
-
-genvar i,p,q;
-
-generate
-    for(p=0; p<m+n ; p = p+1 ) begin : bus_creation_bit_selection
-    for (q=0; q<k-1 ; q=q+1) begin : bus_creation_operant_selection
-
-        assign sreg_din_bus[p][q] = din[q*(m+n)+p];
-    end
-end
-endgenerate
-
-generate
-    for (i=0; i<m+n; i=i+1) begin : reg_file
-        shift_reg #(.size(k-1)) sr(
-            .clk(clk),
-            .rstn(rstn), 
-            .din(sreg_din_bus[i]),
-            .pl(load_enable), 
-            .en(shift_enable), 
-            .si(1'b0), 
-            .so(sreg_sum_connect[i]));  
-    end 
-endgenerate
-
-
-always @(posedge clk, negedge rstn) begin
-
+  assign mypl = pl & ready_reg;
+  assign done = (counter_reg == 1);
+  
+  always @ (posedge clk or negedge rstn) begin
     if (!rstn) begin
-        ready <= 1;
-        counter <= 0;
-        sum <= 0 ;
+      ready_reg <= 1'b1;
     end
-end
+    else begin
+      if (done) ready_reg <= 1'b1;
+      else if (mypl) ready_reg <= 1'b0;
+    end
+  end
 
-always @(posedge clk) begin
-if (ready) begin
-    counter <= 0;
-    if(pl) begin
-        ready <= 0;
-        sum <= din[(m+n)*k-1:(m+n)*(k-1)];
-    end 
-end
-else begin
-    counter <= counter+1;
-    sum <= sum + sreg_sum_connect;
-    if (counter == k-1) ready <=1;
-end
-end
+  always @ (posedge clk or negedge rstn) begin
+    if (!rstn) begin
+      sum_reg <= {swidth{1'b0}};
+    end
+    else begin
+      if (mypl) begin
+        //sum_reg <= {swidth{1'b0}};
+        sum_reg <=din[width-1:0];
+      end
+      else begin
+        sum_reg <= newsum;
+      end
+    end
+  end
+
+  always @ (posedge clk or negedge rstn) begin
+    if (!rstn) begin
+      counter_reg <= k;
+    end
+    else begin
+      if (mypl) begin
+        //counter_reg <= {swidth{1'b0}};
+        counter_reg <=k;
+      end
+      else begin
+        if (counter_reg != 0) counter_reg <= counter_reg-1;
+      end
+    end
+  end
+
+  assign newsum = addend + sum_reg;
+  assign sum = sum_reg;
+  assign ready = ready_reg;
 
 endmodule

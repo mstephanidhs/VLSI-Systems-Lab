@@ -1,2 +1,84 @@
-Error: Current design is not defined. (UID-4)
-0
+Warning: Design 'accumulator' has '1' unresolved references. For more detailed information, use the "link" command. (UID-341)
+ 
+****************************************
+Report : qor
+Design : accumulator
+Version: T-2022.03-SP5
+Date   : Wed May 17 14:35:13 2023
+****************************************
+
+
+  Timing Path Group 'clk'
+  -----------------------------------
+  Levels of Logic:               6.00
+  Critical Path Length:        170.06
+  Critical Path Slack:        -137.31
+  Critical Path Clk Period:     50.00
+  Total Negative Slack:      -1512.64
+  No. of Violating Paths:       22.00
+  Worst Hold Violation:          0.00
+  Total Hold Violation:          0.00
+  No. of Hold Violations:        0.00
+  -----------------------------------
+
+
+  Cell Count
+  -----------------------------------
+  Hierarchical Cell Count:          0
+  Hierarchical Port Count:          0
+  Leaf Cell Count:                141
+  Buf/Inv Cell Count:              46
+  Buf Cell Count:                   2
+  Inv Cell Count:                  44
+  CT Buf/Inv Cell Count:            0
+  Combinational Cell Count:       130
+  Sequential Cell Count:           11
+  Macro Count:                      0
+  -----------------------------------
+
+
+  Area
+  -----------------------------------
+  Combinational Area:      148.132801
+  Noncombinational Area:    66.718080
+  Buf/Inv Area:             34.758720
+  Total Buffer Area:             2.57
+  Total Inverter Area:          32.19
+  Macro/Black Box Area:      0.000000
+  Net Area:                  0.000000
+  -----------------------------------
+  Cell Area:               214.850880
+  Design Area:             214.850880
+
+
+  Design Rules
+  -----------------------------------
+  Total Number of Nets:           185
+  Nets With Violations:             0
+  Max Trans Violations:             0
+  Max Cap Violations:               0
+  -----------------------------------
+
+
+  Hostname: dagobah.ceid.upatras.gr
+
+  Compile CPU Statistics
+  -----------------------------------------
+  Resource Sharing:                    0.02
+  Logic Optimization:                  0.62
+  Mapping Optimization:                6.54
+  -----------------------------------------
+  Overall Compile Time:               13.67
+  Overall Compile Wall Clock Time:    14.10
+
+  --------------------------------------------------------------------
+
+  Design  WNS: 137.31  TNS: 1512.64  Number of Violating Paths: 22
+
+
+  Design (Hold)  WNS: 0.00  TNS: 0.00  Number of Violating Paths: 0
+
+  --------------------------------------------------------------------
+
+
+1
