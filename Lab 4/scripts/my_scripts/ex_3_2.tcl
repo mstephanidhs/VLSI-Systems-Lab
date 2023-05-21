@@ -12,7 +12,7 @@ set_max_area 0
 
 compile_ultra
 
-set resultdir "./results_rca/3_2"
+set resultdir "./results_vmcoffee"
 set postfix "compile_ultra"
 exec mkdir -p -- $resultdir
 report_timing > $resultdir/timing_report.${postfix}.rpt

@@ -9,13 +9,11 @@ GUI_OPTS = -gui=dve
 SRC_DIR = src
 VPATH=$(SRC_DIR)
 
-all: ex1 ex2 ex3 ex4
-
-
 %.o: %.v
 	@echo "Compile $<"
 	$(VLOGAN) $(VLOGAN_OPTS) $<
 	touch $@
+
 
 
 ex1: ex1_1 ex1_2
@@ -55,7 +53,17 @@ ex3_2:
 	dc_shell -f scripts/my_scripts/ex_3_2.tcl
 
 
-ex4:
+ex4: ex4_sim ex4_synth
+
+ex4_sim: gcd_tb.o gcd.o gcd_fsm.o gcd_dataflow.o
+	$(VCS) $(VCS_OPTS) gcd_tb -o zitoumeno4
+	./zitoumeno4
+	dlock: lockcomp.o dlock.o dlock_tb.o
+	@echo "❗️Open results_gcd/gcd.vcd for the waveforms."
+
+ex4_synth:
+	dc_shell -f scripts/my_scripts/ex_4.tcl
+
 
 
 
