@@ -2,7 +2,7 @@
 
 set clk_port clk
 set reset_port rstn
-set clk_period 100
+set clk_period 130
 
 create_clock $clk_port -name clk -period $clk_period
 set_false_path -from $reset_port

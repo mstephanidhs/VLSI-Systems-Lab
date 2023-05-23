@@ -6,7 +6,7 @@ VLOGAN_OPTS = -nc -v2005
 VCS_OPTS = -q -debug_access+all -timescale=10ns/1ns -v2005
 GUI_OPTS = -gui=dve
 
-SRC_DIR = src
+SRC_DIR = src/4
 VPATH=$(SRC_DIR)
 
 %.o: %.v
@@ -14,9 +14,6 @@ VPATH=$(SRC_DIR)
 	$(VLOGAN) $(VLOGAN_OPTS) $<
 	touch $@
 
-
-
-ex1: ex1_1 ex1_2
 
 ex1_1:
 	dc_shell -f scripts/my_scripts/ex_1_1_0.tcl
@@ -29,9 +26,8 @@ ex1_2:
 	dc_shell -f scripts/my_scripts/ex_1_2_200.tcl
 	dc_shell -f scripts/my_scripts/ex_1_2_200_ultra.tcl
 
+ex1: ex1_1 ex1_2
 
-
-ex2: ex2_1 ex2_2
 
 
 ex2_1:
@@ -42,8 +38,8 @@ ex2_2:
 	dc_shell -f scripts/my_scripts/ex_2_2.tcl
 	dc_shell -f scripts/my_scripts/ex_2_2_retime.tcl
 
+ex2: ex2_1 ex2_2
 
-ex3: ex3_1 ex3_2
 
 
 ex3_1:
@@ -52,18 +48,19 @@ ex3_1:
 ex3_2:
 	dc_shell -f scripts/my_scripts/ex_3_2.tcl
 
+ex3: ex3_1 ex3_2
 
-ex4: ex4_sim ex4_synth
 
 ex4_sim: gcd_tb.o gcd.o gcd_fsm.o gcd_dataflow.o
 	$(VCS) $(VCS_OPTS) gcd_tb -o zitoumeno4
 	./zitoumeno4
-	dlock: lockcomp.o dlock.o dlock_tb.o
+	python3 $(SRC_DIR)/test_gcd_results.py ./results_gcd/gcd_results.txt
 	@echo "❗️Open results_gcd/gcd.vcd for the waveforms."
 
 ex4_synth:
 	dc_shell -f scripts/my_scripts/ex_4.tcl
 
+ex4: ex4_sim ex4_synth
 
 
 
