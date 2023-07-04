@@ -1,0 +1,43 @@
+ 
+****************************************
+Report : area
+Design : rca
+Version: T-2022.03-SP5
+Date   : Tue Jul  4 05:11:00 2023
+****************************************
+
+Library(s) Used:
+
+    asap7 (File: /usr/local/eda/synLibs/asap7/7nm/db/asap7.db)
+
+Number of ports:                           25
+Number of nets:                            71
+Number of cells:                           55
+Number of combinational cells:             55
+Number of sequential cells:                 0
+Number of macros/black boxes:               0
+Number of buf/inv:                         12
+Number of references:                      28
+
+Combinational area:                 77.682240
+Buf/Inv area:                        8.631360
+Noncombinational area:               0.000000
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (No wire load specified)
+
+Total cell area:                    77.682240
+Total area:                 undefined
+
+Hierarchical area distribution
+------------------------------
+
+                                  Global cell area          Local cell area
+                                  ------------------  --------------------------- 
+Hierarchical cell                 Absolute   Percent  Combi-    Noncombi-  Black-
+                                  Total      Total    national  national   boxes   Design
+--------------------------------  ---------  -------  --------  ---------  ------  ---------
+rca                                 77.6822    100.0   77.6822     0.0000  0.0000  rca
+--------------------------------  ---------  -------  --------  ---------  ------  ---------
+Total                                                  77.6822     0.0000  0.0000
+
+1

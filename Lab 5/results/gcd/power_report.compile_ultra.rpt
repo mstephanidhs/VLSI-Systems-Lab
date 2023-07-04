@@ -1,0 +1,45 @@
+Loading db file '/usr/local/eda/synLibs/asap7/7nm/db/asap7.db'
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+Warning: Design has unannotated primary inputs. (PWR-414)
+Warning: Design has unannotated sequential cell outputs. (PWR-415)
+ 
+****************************************
+Report : power
+        -hier
+        -analysis_effort low
+Design : gcd
+Version: T-2022.03-SP5
+Date   : Tue Jul  4 04:41:52 2023
+****************************************
+
+
+Library(s) Used:
+
+    asap7 (File: /usr/local/eda/synLibs/asap7/7nm/db/asap7.db)
+
+
+Operating Conditions: PVT_0P7V_25C   Library: asap7
+Wire Load Model Mode: top
+
+
+Global Operating Voltage = 0.7  
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000ff
+    Time Units = 1ps
+    Dynamic Power Units = 1mW    (derived from V,C,T units)
+    Leakage Power Units = 1pW
+
+
+--------------------------------------------------------------------------------
+                                       Switch   Int      Leak     Total
+Hierarchy                              Power    Power    Power    Power    %
+--------------------------------------------------------------------------------
+gcd                                    5.37e-02    0.121 1.90e+04    0.175 100.0
+  dataflow (gcd_dataflow_word8)        3.23e-02 6.95e-02 1.58e+04    0.102  58.3
+    sub_19 (gcd_dataflow_word8_DW01_sub_1)
+                                       6.71e-03 5.06e-03 2.84e+03 1.18e-02   6.7
+    sub_21 (gcd_dataflow_word8_DW01_sub_0)
+                                       6.77e-03 5.05e-03 2.84e+03 1.18e-02   6.8
+  fsm (gcd_fsm)                        2.14e-02 5.15e-02 3.21e+03 7.29e-02  41.7
+1

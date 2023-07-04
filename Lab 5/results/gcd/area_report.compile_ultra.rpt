@@ -1,0 +1,47 @@
+ 
+****************************************
+Report : area
+Design : gcd
+Version: T-2022.03-SP5
+Date   : Tue Jul  4 04:41:51 2023
+****************************************
+
+Library(s) Used:
+
+    asap7 (File: /usr/local/eda/synLibs/asap7/7nm/db/asap7.db)
+
+Number of ports:                          126
+Number of nets:                           303
+Number of cells:                          182
+Number of combinational cells:            147
+Number of sequential cells:                31
+Number of macros/black boxes:               0
+Number of buf/inv:                         63
+Number of references:                       2
+
+Combinational area:                194.555518
+Buf/Inv area:                       44.556481
+Noncombinational area:             144.167036
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (No wire load specified)
+
+Total cell area:                   338.722554
+Total area:                 undefined
+
+Hierarchical area distribution
+------------------------------
+
+                                  Global cell area          Local cell area
+                                  ------------------  --------------------------- 
+Hierarchical cell                 Absolute   Percent  Combi-    Noncombi-  Black-
+                                  Total      Total    national  national   boxes   Design
+--------------------------------  ---------  -------  --------  ---------  ------  -----------------------------
+gcd                                338.7226    100.0    0.0000     0.0000  0.0000  gcd
+dataflow                           280.4026     82.8   86.3136   111.9744  0.0000  gcd_dataflow_word8
+dataflow/sub_19                     41.0573     12.1   41.0573     0.0000  0.0000  gcd_dataflow_word8_DW01_sub_1
+dataflow/sub_21                     41.0573     12.1   41.0573     0.0000  0.0000  gcd_dataflow_word8_DW01_sub_0
+fsm                                 58.3200     17.2   26.1274    32.1926  0.0000  gcd_fsm
+--------------------------------  ---------  -------  --------  ---------  ------  -----------------------------
+Total                                                 194.5555   144.1670  0.0000
+
+1
