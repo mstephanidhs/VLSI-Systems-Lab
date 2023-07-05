@@ -11,8 +11,10 @@ VCS_POWER = -kdb
 GUI_OPTS = -gui=dve
 
 
-vpath %.v ./src/*
-vpath %.py ./src/*
+VPATH = src/gcd:src/ineuron:src/rca:src/vmcoffee
+
+
+.PHONY: example rca vmcoffee gcd ex1_2 clean
 
 
 %.o: %.v
@@ -21,7 +23,6 @@ vpath %.py ./src/*
 	touch $@
 #-------------------------------------------------
 
-.PHONY: example rca vmcoffee gcd ex1_2 clean
 
 
 #Example 
@@ -63,8 +64,8 @@ vmcoffee: vmcoffee_power
 	@echo "✅Done"
 
 gcd_simulation: gcd_tb.o gcd.o gcd_fsm.o gcd_dataflow.o
-	$(VCS) $(VCS_OPTS) gcd_tb -o gcd_emulation
-	./gcd_emulation 
+	$(VCS) $(VCS_OPTS) gcd_tb -o gcd_simulation
+	./gcd_simulation
 	python3 ./src/gcd/test_gcd_results.py ./results/gcd/gcd_results.txt
 	@echo "❗️Open results_gcd/gcd.vcd for the waveforms."
 
@@ -87,7 +88,12 @@ ex1_2: rca vmcoffee gcd
 
 
 #Exercise 1.3 : Artificial Neuron
-ineuron_simulation: 
+ineuron_simulation: ineuron_tb.o 
+	$(VCS) $(VCS_OPTS) ineuron_tb -o ineuron_simulation
+	./ineuron_simulation
+	python3 ./src/ineuron/test_ineuron_results.py ./results/ineuron/ineuron.txt
+	@echo "❗️Open results/ineuron/ineuron.vcd for the waveforms."
+
 #-------------------------------------------------
 
 
@@ -116,3 +122,4 @@ clean:
 	rm -f -r rca_*
 	rm -f -r vmcoffee*
 	rm -f -r gcd*
+	rm -f -r ineuron*
