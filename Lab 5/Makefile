@@ -88,17 +88,29 @@ ex1_2: rca vmcoffee gcd
 
 
 #Exercise 1.3 : Artificial Neuron
-ineuron_simulation: ineuron_tb.o 
+ineuron_simulation: ineuron_tb.o ineuron.o
 	$(VCS) $(VCS_OPTS) ineuron_tb -o ineuron_simulation
 	./ineuron_simulation
 	python3 ./src/ineuron/test_ineuron_results.py ./results/ineuron/ineuron.txt
 	@echo "❗️Open results/ineuron/ineuron.vcd for the waveforms."
+
+ineuron_synthesis: 
+	dc_shell -f scripts/ineuron/synthesize_ineuron.tcl
+
 
 #-------------------------------------------------
 
 
 
 #Exercise 1.4 : RedWine MLP classifier
+iclassifier_simulation: iclassifier_tb.o 
+	$(VCS) $(VCS_OPTS) iclassifier_tb -o iclassifier_simulation
+	./iclassifier_simulation
+	python3 ./src/ineuron/test_iclassifier_results.py ./results/iclassifier/iclassifier.txt
+	@echo "❗️Open results/iclassifier/iclassifier.vcd for the waveforms."
+
+ineuron_synthesis: 
+	dc_shell -f scripts/iclassifier/synthesize_iclassifier.tcl
 
 #-------------------------------------------------
 

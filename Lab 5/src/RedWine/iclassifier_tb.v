@@ -1,6 +1,4 @@
-`include "./src/ineuron/ineuron.v"
-
-module ineuron_tb;
+module iclassifier_tb;
 
 parameter nofActivations = 4;
 parameter bitsofActivations = 4;

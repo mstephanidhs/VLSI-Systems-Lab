@@ -16,11 +16,11 @@ module ineuron #(
 reg signed [m*n-1:0] weights;
 reg signed [b-1:0] bias;
 
-always @(posedge clk or negedge rstn) begin // @(loadparams) Εδώ μήπως είναι από τις λίγες περιπτώσεις που πρέπει να προτιμήσουμε latces λόγω κατανάλωσης;
+always @(posedge clk or negedge rstn) begin 
     if (!rstn) 
     begin
-        weights = 0;
-        bias = 0;
+        weights <= 0;
+        bias <= 0;
     end
     else if (load_params) 
     begin 
