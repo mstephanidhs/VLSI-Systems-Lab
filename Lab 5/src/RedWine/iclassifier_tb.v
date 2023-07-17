@@ -17,13 +17,7 @@ wire [(bitsofweights+bitsofActivations) + $clog2(nofActivations) - 1:0] out;
 integer f;
 
 
-ineuron #(
-    .m(nofActivations),
-    .n(bitsofweights),
-    .k(bitsofActivations),
-    .b(bitsofbias)
-)
-DUT
+iclassifier DUT
 (
     .rstn(rstn),
     .clk(clk),
@@ -39,9 +33,9 @@ localparam CLK_PERIOD = 100;
 always #(CLK_PERIOD/2) clk=~clk;
 
 initial begin
-    $dumpfile("./results/ineuron/ineuron.vcd");
+    $dumpfile("./results/iclassifier/iclassifier.vcd");
     $dumpvars;
-    f = $fopen("./results/ineuron/ineuron.txt","w");
+    f = $fopen("./results/iclassifier/iclassifier.txt","w");
     clk = 0;
 end
 
